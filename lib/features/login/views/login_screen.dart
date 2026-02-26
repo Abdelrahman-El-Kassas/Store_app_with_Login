@@ -2,15 +2,16 @@ import 'package:dio/dio.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:store_app/features/home/presentation/screens/home.dart';
+import 'package:store_app/core/routing/routes.dart';
+
 import 'package:store_app/features/login/cubit/login_cubit.dart';
 import 'package:store_app/features/login/cubit/login_states.dart';
 import 'package:store_app/features/login/widgets/custom_text_field.dart';
 import 'package:store_app/features/login/widgets/custombutton.dart';
 
 class LoginScreen extends StatefulWidget {
- const LoginScreen({super.key});
-   //شيل const
+  const LoginScreen({super.key});
+  //شيل const
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -44,19 +45,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   backgroundColor: Colors.green,
                   duration: Duration(seconds: 2),
-                  
                 ),
-
-                
               );
-              Navigator.pushReplacement(
-                context,MaterialPageRoute(builder: 
-                (context)=>Home() )
-              );
-            } 
-            
-            
-            else if (state is FailedState) {
+              Navigator.pushReplacementNamed(context,Routes.homeScreen);
+            } else if (state is FailedState) {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text(
@@ -154,7 +146,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               : CustomButton(
                                   text: "Login",
                                   onPressed: () {
-                           
                                     if (loginformkey.currentState!.validate()) {
                                       context.read<LoginCubit>().login(
                                         name: usernameController.text,
