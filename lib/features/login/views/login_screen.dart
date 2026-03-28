@@ -3,11 +3,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:store_app/core/routing/routes.dart';
-
-import 'package:store_app/features/login/cubit/login_cubit.dart';
-import 'package:store_app/features/login/cubit/login_states.dart';
-import 'package:store_app/features/login/widgets/custom_text_field.dart';
-import 'package:store_app/features/login/widgets/custombutton.dart';
+import 'package:store_app/features/login/model/login_repo.dart';
+import 'package:store_app/features/login/viewmodel/login_cubit.dart';
+import 'package:store_app/features/login/viewmodel/login_states.dart';
+import 'package:store_app/features/login/views/widgets/custom_text_field.dart';
+import 'package:store_app/features/login/views/widgets/custombutton.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
         FocusScope.of(context).unfocus();
       },
       child: BlocProvider(
-        create: (context) => LoginCubit(Dio()),
+        create: (context) => LoginCubit(LoginRepo(Dio())),
 
         child: BlocConsumer<LoginCubit, LoginStates>(
           listener: (context, state) {

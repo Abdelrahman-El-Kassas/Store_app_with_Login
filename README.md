@@ -4,3 +4,4 @@
 * State Management using flutter_bloc (Cubit).
 * Networking & API calls using Dio.
 * Responsive and clean UI.
+* Shared_Preferences to save User login

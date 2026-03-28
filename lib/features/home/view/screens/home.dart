@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:store_app/features/home/cubit/product_cubit.dart';
-import 'package:store_app/features/home/cubit/product_states.dart';
-import 'package:store_app/features/home/presentation/widgets/product_widget.dart';
+import 'package:store_app/features/home/viewmodel/product_cubit.dart';
+import 'package:store_app/features/home/viewmodel/product_states.dart';
+import 'package:store_app/features/home/view/screens/widgets/product_widget.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});
@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
       child: BlocConsumer<ProductsCubit, ProductStates>(
         listener: (context, state) {},
         builder: (context, state) {
-          final cubit = BlocProvider.of<ProductsCubit>(context);
+          // final cubit = BlocProvider.of<ProductsCubit>(context);
           return Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.white,

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:store_app/features/home/cubit/product_states.dart';
+import 'package:store_app/features/home/viewmodel/product_states.dart';
 import 'package:store_app/features/home/data/models/product_model.dart';
 
 class ProductsCubit extends Cubit<ProductStates> {
