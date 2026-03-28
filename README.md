@@ -5,3 +5,4 @@
 * Networking & API calls using Dio.
 * Responsive and clean UI.
 * Shared_Preferences to save User login
+  Receently I update it be MVVM architecture to train myself to be flexible to change editng to any project
